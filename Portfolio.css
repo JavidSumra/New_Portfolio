@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Niconne&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", monospace, "Courier New", Courier;
+}
+/* ! Landing Page */
+.landingpage {
+  height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* ? < Navigation Bar > */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 370px) {
+  nav {
+    width: 140%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+nav .name {
+  padding: 10px;
+  font-size: 50px;
+  color: #212121;
+  font-family: "Niconne", "Poppins", cursive;
+  font-weight: 700;
+  text-shadow: 5px 5px 0px #eb452b;
+}
+nav .name .first-letter {
+  font-size: 60px;
+}
+nav .navbar {
+  margin: 10px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .navbar .navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  background: #000;
+  transition: display 1s ease-in-out;
+}
+nav .navbar .navigation a {
+  font-size: 30px;
+  text-decoration: none;
+  margin: 15px 0;
+  letter-spacing: 3px;
+  position: relative;
+  padding: 10px;
+  color: #fff;
+}
+nav .navbar .navigation a::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #eea16d;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  transition: width 0.5s ease-in-out;
+}
+nav .navbar .navigation a:hover {
+  color: #3b82f6;
+  background: #212121;
+  border-radius: 5px;
+}
+nav .navbar .navigation a:hover::after {
+  width: 50%;
+}
+nav .navbar .close-icon {
+  display: none;
+  width: 100px;
+  position: absolute;
+  right: 80px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 2;
+  color: #fff;
+}
+
+/*? < Navbar Ends Here > */
+
+.intro {
+  display: flex;
+  object-fit: cover;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.intro .detail-intro {
+  margin: 80px 40px;
+}
+.intro .detail-intro .name_detail {
+  color: #cbd5e1;
+  font-weight: 500px;
+  font-size: 20px;
+}
+.intro .detail-intro .work {
+  font-size: 40px;
+  font-weight: 800;
+}
+.intro .detail-intro .work::after {
+  content: " ";
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  background: #f5748e;
+  border-radius: 5px;
+}
+.intro .detail-intro .task {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #605d5d;
+}
+@media (max-width: 539px) {
+  .intro .detail-intro .task {
+    font-size: small;
+  }
+}
+.intro section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.intro .design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20rem;
+  transform: rotate(-15deg);
+  color: #581845;
+  text-shadow: -5px -5px 0 #900c3f, -10px -10px 0 #c70039, -15px -15px 0 #ff5733,
+    -20px -20px 0 #ffc30f;
+  transition: all 0.5s linear;
+}
+.intro .design:hover {
+  text-shadow: 5px 5px 0 #900c3f, 10px 10px 0 #c70039, 15px 15px 0 #ff5733,
+    20px 20px 0 #ffc30f;
+}
+#markDesign {
+  margin: 10px auto;
+}
+.circle {
+  position: absolute;
+  top: 50px;
+  transform-style: preserve-3d;
+  animation: animText 10s linear infinite;
+}
+
+.circle span {
+  font-family: consolas;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  color: #35146f;
+  font-size: 2.5em;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  padding: 5px 11px;
+  transform: rotateY(calc(var(--i) * calc(360deg / 19))) translateZ(100px);
+}
+@keyframes animText {
+  0% {
+    transform: rotateY(360deg) rotateX(15deg) translateY(-30px)
+      perspective(1000px);
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(15deg) translateY(-30px)
+      perspective(1000px);
+  }
+}
+@media (max-width: 877px) {
+  #markDesign {
+    display: none;
+  }
+}
+
+/* ! < Skill  Page > */
+
+#skillPage {
+  display: flex;
+  height: 100vh;
+  background: #171717;
+  /* flex-wrap: wrap */
+  object-fit: cover;
+}
+
+#skillPage .skill_title {
+  margin: 10px;
+  letter-spacing: 1.2px;
+  writing-mode: vertical-lr;
+  display: inline;
+  font-size: 80px;
+  -webkit-text-stroke: 1px #fff;
+  color: #171717;
+  transform: rotate(180deg);
+  border-left: 3px solid #ffff00;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  #skilPage {
+    width: 100vw;
+  }
+}
+#skillPage .skill {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+#skillPage .skill .whoIam {
+  color: #ffff00;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 40px;
+}
+#skillPage .skill .aboutme {
+  color: #b0b0b0;
+  margin: 5px 10px;
+}
+#skillPage .skill .tech {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+#skillPage .skill .tech .boxs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#skillPage .skill .tech .boxs .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  background: #414141;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 #000, 10px 10px 0 #000;
+  transition: all 0.7s ease-in-out;
+}
+#skillPage .skill .tech .boxs .box:hover {
+  cursor: pointer;
+  box-shadow: none;
+  scale: 0.9;
+}
